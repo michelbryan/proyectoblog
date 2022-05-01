@@ -1,0 +1,26 @@
+{% extends 'appblog/base.html' %}
+
+
+{% block main_content %}
+
+
+<div class="container m-5">
+    <div class="card-columns">
+        {% for publicaciones in object_list %}
+        <div class="card text-center p-3 m-3">
+            <div class="card-body">
+                <h5 class="card-title">{{publicaciones.titulo}}</h5>
+                <a class="card-link" href="{%url 'publicacion_detail' publicacion.posteo%}">Detalle</a> |
+                <a class="card-link" href="{%url 'publicacion_update' publicacion.posteo%}">Actualizar</a> |
+                <a class="card-link" href="{%url 'publicacion_delete' publicacion.titulo%}">Borrar</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="container">
+    <a class="btn btn-primary btn-sm" href="{% url 'publicacion_create' %}">Agregar publicacion</a>
+</div>
+
+{% endblock main_content %}

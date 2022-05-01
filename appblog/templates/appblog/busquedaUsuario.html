@@ -8,14 +8,18 @@
 </head>
 <body>
     
-    <form action="/appblog/buscarusuario" method="get">
+    <form action="/appblog/buscarusuario/" method="get">
         
         <input type="number" name="id">
+        
         <input type="submit" value="Buscar">
+    
     </form>
-
+      
     {% if usuario %}
-        <p>Usuario encontrado: {{usuario.nombre}}</p>
+        
+        <p>Usuario encontrado: {{usuarios}}</p>
+    
     {% endif %}
 </body>
 </html>
